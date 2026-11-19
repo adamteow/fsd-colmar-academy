@@ -1,5 +1,3 @@
-/* TODO */
-
 /* Reset CSS */
 /* Universal selector (*) targets every element (regardless tag, class, ID) */
 *{
@@ -28,8 +26,6 @@ a{
     grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end];
     grid-template-rows: repeat(6, min-content);
 }
-
-/* TODO */
 
 /** Start of Desktop Section **/
 /** ************************ **/
@@ -90,7 +86,6 @@ nav > a{
 /* Set up navigation links' styles */
 
 
-/* Set up header area */
 /* Set up header area */
 header.hero {
     grid-column: full-start / full-end;
@@ -313,7 +308,6 @@ header.hero .imgcontainer > img {
 
 .thesis {
     grid-column: full-start / full-end;
-    background-color: #eaebec;
     padding: 2rem 1.5rem; /* 32px top/bottom, 24px left/right */
 }
 
@@ -425,7 +419,7 @@ footer > ul > li > a:visited{
     display: none;
 }
 
-/* Hide header mobile */
+/* Hide mobile */
 .header-mobile {
     display: none;
 }
@@ -436,25 +430,23 @@ footer > ul > li > a:visited{
 }
 
 
+/* End of Desktop Section */
 
-/** ********************** **/
-/** End of Desktop Section **/
-
-
-/* TODO */
-
-/** Start of Mobile Section **/
-/** *********************** **/
+/* Start of Mobile Section */
 
 
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem ) {
-    
-    @media screen and (max-width: 40rem ) {
-    
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
     /* Hide the desktop <nav> and practice class */
-    nav, .practice{
+    nav,
+    header.hero-desktop,
+    .practice {
         display: none;
     }
 
@@ -465,42 +457,80 @@ footer > ul > li > a:visited{
         justify-content: space-around;
         grid-column: full-start/full-end;
         height: 4rem;
+        background-color: #fff;
     }
 
     /* Set the header image to take up the entire viewport width */
-    header{
-        display: grid;
-        grid-column: full-start/full-end;
+    
+    header.hero {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        gap: 0;
     }
 
-    .imgcontainer{
+    header.hero .img-container {
+        flex: none;
+        width: 100%;
+        margin: 0;
         padding: 0;
     }
 
-    header > div{
+    header.hero .img-container > img {
         display: block;
-        width: auto;
-        height: auto;
-        padding: 2rem 1rem;
+        width: 100%;
+        max-width: 100%;
+        height: 21rem;
+        object-fit: cover;
+        object-position: top;
+        margin: 0;
+        padding: 0;
     }
 
-    header > div > h2{
-        margin-top: 2rem;
-        margin-bottom: 1.5rem;
+    header.hero .hero-text {
+        padding: 2rem 1rem; /* 32px top/bottom, 16px left/right */
+        gap: 0;
     }
 
+    header.hero .hero-text > h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 2rem; /* 32px gap below h1 */
+    }
+
+    header.hero .hero-text > h2 {
+        font-size: 1.125rem;
+        font-weight: normal;
+        line-height: 1.35;
+        margin-bottom: 1.5rem; /* 24px gap below h2 */
+    }
+
+    header.hero .hero-text > a {
+        background-color: #9b9b9b;
+        padding: 0.75rem 0;
+        font-weight: bold;
+    }
     /* Set up the events for mobile */
-    .events{
+    .events {
         display: grid;
         grid-column: full-start / full-end;
         border-left: none;
     }
     
-    .events > .events-block{
+    .events > .events-block {
         display: flex;
         flex-direction: column;
         padding: 4rem 1rem 0 1rem;
         border-bottom: none;
+    }
+
+    .events > .events-block > img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center
     }
 
     .events .events-block:first-child{
@@ -509,16 +539,6 @@ footer > ul > li > a:visited{
 
     .events .events-block:last-child{
         padding-bottom: 2rem;
-    }
-
-    .events > .events-block > .events-img-desktop{
-        display: none;
-    }
-
-    .events > .events-block > .events-img-mobile{
-        display: block;
-        width: 100%;
-        height: auto;
     }
 
     .events > .events-block > .events-text{
@@ -530,11 +550,96 @@ footer > ul > li > a:visited{
         margin-left: 1rem;
     }
 
+    section.learning {
+        grid-column: full-start / full-end; /* if using a named CSS grid */
+        padding: 2rem 1rem 2rem 1rem; /* 32px top & bottom, 16px left/right */
+        background-color: #fff;
+    }
+
+    section.learning > h2 {
+        font-size: 2rem;
+        text-align: center;
+        color: #484848;
+        margin: 0 0 1rem 0; /* 16px gap below heading */
+    }
+
+    section.learning > .learning-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; /* 8px gap between cards */
+    }
+
+    section.learning > .learning-grid > .learning-card > img,
+    section.learning > .learning-grid > .learning-card > .learning-card-body > p {
+        display: none;
+    }
+
+    section.learning > .learning-grid > .learning-card {
+        width: 100%;
+        background-color: #d8d8d8;
+        padding: 1rem 1.25rem 1.5rem 1.25rem; /* 16px top, 20px horizontal inset, 24px bottom */
+        margin: 0;
+    }
+
+    section.learning > .learning-grid > .learning-card > .learning-card-body {
+        padding: 0;
+        margin: 0;
+    }
+
+    section.learning > .learning-grid > .learning-card > .learning-card-body > h3 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #484848;
+    }
+
+    section.thesis {
+        display: block;
+        grid-template-columns: 1fr;
+        padding: 2rem 0 1.5rem 0; /* 32px top, 0 sides, 24px bottom */
+    }
+
+    section.thesis .thesis-list,
+    section.thesis .thesis-text,
+    section.thesis .thesis-block {
+        display: none;
+    }
+
+    /* Reset any intermediate wrapper (e.g., .thesis-content / .thesis-grid) */
+    section.thesis > div,
+    section.thesis .thesis-main,
+    section.thesis .thesis-video {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        flex: none;
+        grid-column: 1 / -1;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Keep heading and full-width video visible */
+    section.thesis > h2 {
+        display: block;
+        text-align: center;
+        margin: 0 0 1rem 0; /* 16px gap below heading */
+    }
+
+    section.thesis video {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        padding: 0;
+        margin: 0;
+    }
+       
+
     /* Set footer for mobile */
     footer > ul{
         display: none;
     }
 }
 
-/* *********************** */
 /* End of Mobile Section */
