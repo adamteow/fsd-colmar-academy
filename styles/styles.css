@@ -1,9 +1,11 @@
 /* Reset CSS */
 /* Universal selector (*) targets every element (regardless tag, class, ID) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
-    outline: 1px dashed #000; */
+    outline: 1px dashed #000;
 }
 
 html{
@@ -12,7 +14,8 @@ html{
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Poppins, sans-serif;
+
     background-color: #fff;
 }
 
@@ -117,6 +120,7 @@ header.hero .imgcontainer > img {
     gap: 1rem;
     padding-right: 1.5rem;
     min-width: 0;
+    color: #484848;
 }
 
 .hero-text > h1 {
@@ -138,8 +142,12 @@ header.hero .imgcontainer > img {
 }
 
 /* hover effect for call to action link */
-
-
+    
+.hero .hero-text > a:hover {
+    background-color: #000; 
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
 /* Set up practice section */
 
 .practice {
@@ -169,6 +177,7 @@ header.hero .imgcontainer > img {
 
 .practice > .practice-text > h1 {
     font-size: xx-large;
+    margin-top: 2rem;
     margin-bottom: 1.5rem;
     color: #484848;
 }
@@ -429,12 +438,9 @@ footer > ul > li > a:visited{
     display: none;
 }
 
-
 /* End of Desktop Section */
 
 /* Start of Mobile Section */
-
-
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem ) {
@@ -445,7 +451,6 @@ footer > ul > li > a:visited{
 
     /* Hide the desktop <nav> and practice class */
     nav,
-    header.hero-desktop,
     .practice {
         display: none;
     }
@@ -510,38 +515,40 @@ footer > ul > li > a:visited{
         padding: 0.75rem 0;
         font-weight: bold;
     }
+
     /* Set up the events for mobile */
-    .events {
+    section.events {
         display: grid;
         grid-column: full-start / full-end;
         border-left: none;
     }
     
-    .events > .events-block {
+    section.events > .events-block {
         display: flex;
         flex-direction: column;
         padding: 4rem 1rem 0 1rem;
         border-bottom: none;
     }
 
-    .events > .events-block > img {
+    section.events > .events-block > img {
+        display: none;
+    }
+
+    section.events > .events-block > .events-img-mobile {
         display: block;
         width: 100%;
         height: auto;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        object-position: center
     }
 
-    .events .events-block:first-child{
+    section.events .events-block:first-child{
         padding-top: 1rem;
     }
 
-    .events .events-block:last-child{
+    section.events .events-block:last-child{
         padding-bottom: 2rem;
     }
 
-    .events > .events-block > .events-text{
+    section.events > .events-block > .events-text{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -551,7 +558,7 @@ footer > ul > li > a:visited{
     }
 
     section.learning {
-        grid-column: full-start / full-end; /* if using a named CSS grid */
+        grid-column: full-start / full-end; 
         padding: 2rem 1rem 2rem 1rem; /* 32px top & bottom, 16px left/right */
         background-color: #fff;
     }
@@ -597,6 +604,7 @@ footer > ul > li > a:visited{
         display: block;
         grid-template-columns: 1fr;
         padding: 2rem 0 1.5rem 0; /* 32px top, 0 sides, 24px bottom */
+        color: #484848;
     }
 
     section.thesis .thesis-list,
@@ -635,10 +643,17 @@ footer > ul > li > a:visited{
         margin: 0;
     }
        
-
     /* Set footer for mobile */
+
     footer > ul{
         display: none;
+    }
+
+
+    footer > p{
+
+    white-space: nowrap;
+    font-size: x-small;
     }
 }
 
