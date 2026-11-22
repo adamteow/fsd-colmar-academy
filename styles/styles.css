@@ -1,15 +1,15 @@
-/* Reset CSS */
-/* Universal selector (*) targets every element (regardless tag, class, ID) */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*** Universal selector ***/
+
 *{
     margin: 0;
     padding: 0;
-    outline: 1px dashed #000;
+    /* outline: 1px dashed #000; */
 }
 
 html{
-    font-size: 16px;        /* 1 rem used on the page == 16px  */
+    font-size: 16px;
     box-sizing: border-box;
 }
 
@@ -24,23 +24,28 @@ a{
     color: inherit;
 }
 
+/*** Set up the container for the page ***/
+
 .container{
     display: grid;
-    grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end];
+    grid-template-columns: [full-start] 0.6fr [center-end center-start] 0.4fr [full-end]; 
     grid-template-rows: repeat(6, min-content);
 }
 
-/** Start of Desktop Section **/
-/** ************************ **/
+/*** Start of Desktop Section ***/
 
-/* Set up the navbar for the desktop */
+/** Set up the navbar for the desktop **/
+
 nav{
+
     display: flex;
     grid-column: full-start / full-end;
     background-color: #fff;
     justify-content: space-between;
     height: 4rem;
 }
+
+/** Set up navigation links' styles **/
 
 nav ul{
     display: flex;
@@ -65,7 +70,8 @@ nav > a{
     align-items: center;
 }
 
-/* Set up logo styles */
+/** Set up logo styles **/
+
 .logo{
     height: 3rem;
     margin-left: 1.5rem;
@@ -86,10 +92,8 @@ nav > a{
     color: #aaa;
 }
 
-/* Set up navigation links' styles */
+/** Set up header area **/
 
-
-/* Set up header area */
 header.hero {
     grid-column: full-start / full-end;
     display: flex;
@@ -100,7 +104,7 @@ header.hero {
 }
 
 header.hero .imgcontainer {
-    flex: 0 0 60%; /* matches the 0.6fr proportion */
+    flex: 0 0 60%; 
     padding: 0;
     min-width: 0;
 }
@@ -113,7 +117,7 @@ header.hero .imgcontainer > img {
 }
 
 .hero-text {
-    flex: 1; /* fills the remaining ~0.4fr space */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,27 +145,28 @@ header.hero .imgcontainer > img {
     padding: 0.5rem 0;
 }
 
-/* hover effect for call to action link */
+/** hover effect for call to action link **/
     
 .hero .hero-text > a:hover {
     background-color: #000; 
     cursor: pointer;
     transition: background-color 0.3s ease; 
 }
-/* Set up practice section */
+
+/** Set up practice section **/
 
 .practice {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 2rem 1.5rem; /* 32px top/bottom, 24px left/right */
+    padding: 2rem 1.5rem;
     min-width: 0;
 }
 
 .practice > .imgcontainer {
     width: 100%;
     padding: 0;
-    margin-bottom: 2rem; /* 32px gap below main image */
+    margin-bottom: 2rem; 
 }
 
 .practice > .imgcontainer > img {
@@ -195,13 +200,13 @@ header.hero .imgcontainer > img {
     padding: 2rem 0 0;
 }
 
-/* Set up events section */
+/** Set up events section **/
 
 .events {
     display: flex;
     flex-direction: column;
     border-left: 1px solid #e7e7e7;
-    padding-top: 1rem; /* aligns top of first card with practice padding */
+    padding-top: 1rem; 
     min-width: 0;
 }
 
@@ -254,24 +259,24 @@ header.hero .imgcontainer > img {
     text-decoration: underline;
 }
 
-/* Learning */
+/** Set up learning section **/
 
 .learning {
     grid-column: full-start / full-end;
     background-color: #eaebec;
-    padding: 2rem 4.5rem; /* 32px top/bottom, 72px left/right */
+    padding: 2rem 4.5rem; 
 }
 
 .learning > h2 {
     text-align: center;
-    font-size: 2rem; /* 32px */
-    margin-bottom: 2rem; /* 32px */
+    font-size: 2rem;
+    margin-bottom: 2rem; 
 }
 
 .learning-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem; /* 32px row & column gap */
+    gap: 2rem; 
 }
 
 .learning-card {
@@ -293,7 +298,7 @@ header.hero .imgcontainer > img {
     flex-direction: column;
     flex: 1;
     min-width: 0;
-    padding: 1rem 1rem 1.5rem; /* 16px top/left/right, 24px bottom */
+    padding: 1rem 1rem 1.5rem; 
     overflow-wrap: break-word;
 }
 
@@ -302,34 +307,34 @@ header.hero .imgcontainer > img {
 }
 
 .learning-card-body p.learning-label {
-    margin-top: 0.5rem; /* 8px */
+    margin-top: 0.5rem; 
     font-size: 0.875rem;
     text-transform: uppercase;
 }
 
 .learning-card-body p:last-child {
-    margin-top: 0.5rem; /* 8px */
+    margin-top: 0.5rem; 
     font-size: 0.875rem;
     line-height: 1.4;
 }
 
-/* Setup thesis */
+/** Setup thesis section **/
 
 .thesis {
     grid-column: full-start / full-end;
-    padding: 2rem 1.5rem; /* 32px top/bottom, 24px left/right */
+    padding: 2rem 1.5rem; 
 }
 
 .thesis > h2 {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 2rem; /* 32px below heading */
+    margin-bottom: 2rem;
 }
 
 .thesis-content {
     display: grid;
-    grid-template-columns: 0.6fr 0.4fr; /* 60% main, 40% list */
-    gap: 1.5rem; /* 24px between columns */
+    grid-template-columns: 0.6fr 0.4fr; 
+    gap: 1.5rem; 
     align-items: start;
 }
 
@@ -344,18 +349,18 @@ header.hero .imgcontainer > img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 1.5rem; /* 24px below video */
+    margin-bottom: 1.5rem; 
 }
 
 .thesis-main .thesis-text h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.5rem; /* 8px below title */
+    margin-bottom: 0.5rem;
 }
 
 .thesis-main .thesis-text p {
     font-size: 0.875rem;
     line-height: 1.4;
-    margin-bottom: 2rem; /* 32px bottom breathing room */
+    margin-bottom: 2rem; 
 }
 
 .thesis-list {
@@ -366,10 +371,10 @@ header.hero .imgcontainer > img {
 
 .thesis-list .thesis-block {
     display: grid;
-    grid-template-columns: 0.35fr 0.65fr; /* 35% image, 65% text */
-    gap: 1rem; /* 16px between image and text */
+    grid-template-columns: 0.35fr 0.65fr;
+    gap: 1rem;
     align-items: center;
-    padding: 1rem; /* 16px all around */
+    padding: 1rem;
 }
 
 .thesis-list .thesis-block:first-child {
@@ -395,7 +400,8 @@ header.hero .imgcontainer > img {
     font-size: 0.875rem;
     line-height: 1.35;
 }
-/* Set up footer */
+
+/** Set up footer section **/
 
 footer{
     font-size: 0.8rem;
@@ -423,39 +429,41 @@ footer > ul > li > a:visited{
     color: #f00;
 }
 
+/* Hide mobile */
+
 /* Hide events mobile */
+
 #nav-mobile{
     display: none;
 }
 
-/* Hide mobile */
-.header-mobile {
-    display: none;
-}
-
 /* Hide events mobile img */
+
 .events > .events-block > .events-img-mobile{
     display: none;
 }
 
-/* End of Desktop Section */
+/*** End of Desktop Section ***/
 
-/* Start of Mobile Section */
+/*** Start of Mobile Section ***/
 
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
+
 @media screen and (max-width: 40rem ) {
 
     .container {
         grid-template-columns: 1fr;
     }
 
-    /* Hide the desktop <nav> and practice class */
+    /** Hide the desktop <nav> and practice class **/
+
     nav,
     .practice {
         display: none;
     }
 
-    /* Display mobile nav */
+    /** Display mobile nav **/
+
     #nav-mobile{
         display: flex;
         align-items: center;
@@ -465,11 +473,11 @@ footer > ul > li > a:visited{
         background-color: #fff;
     }
 
-    /* Set the header image to take up the entire viewport width */
+    /** Set header styles for mobile **/
     
     header.hero {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: column; /* align items to the top */
+        align-items: stretch; /* stretch items to fill the container */
         padding: 0;
         gap: 0;
     }
@@ -493,21 +501,21 @@ footer > ul > li > a:visited{
     }
 
     header.hero .hero-text {
-        padding: 2rem 1rem; /* 32px top/bottom, 16px left/right */
+        padding: 2rem 1rem; 
         gap: 0;
     }
 
     header.hero .hero-text > h1 {
         font-size: 2rem;
         line-height: 1.2;
-        margin-bottom: 2rem; /* 32px gap below h1 */
+        margin-bottom: 2rem; 
     }
 
     header.hero .hero-text > h2 {
         font-size: 1.125rem;
         font-weight: normal;
         line-height: 1.35;
-        margin-bottom: 1.5rem; /* 24px gap below h2 */
+        margin-bottom: 1.5rem; 
     }
 
     header.hero .hero-text > a {
@@ -516,11 +524,13 @@ footer > ul > li > a:visited{
         font-weight: bold;
     }
 
-    /* Set up the events for mobile */
+    /** Set up the events section for mobile **/
+
     section.events {
         display: grid;
         grid-column: full-start / full-end;
         border-left: none;
+        padding: 0;
     }
     
     section.events > .events-block {
@@ -529,6 +539,8 @@ footer > ul > li > a:visited{
         padding: 4rem 1rem 0 1rem;
         border-bottom: none;
     }
+
+    /* Remove the image from the first block and add a mobile image instead */
 
     section.events > .events-block > img {
         display: none;
@@ -546,6 +558,7 @@ footer > ul > li > a:visited{
 
     section.events .events-block:last-child{
         padding-bottom: 2rem;
+        background-color: whitesmoke;
     }
 
     section.events > .events-block > .events-text{
@@ -557,9 +570,11 @@ footer > ul > li > a:visited{
         margin-left: 1rem;
     }
 
+    /** Set up the learning section for mobile **/
+
     section.learning {
         grid-column: full-start / full-end; 
-        padding: 2rem 1rem 2rem 1rem; /* 32px top & bottom, 16px left/right */
+        padding: 2rem 1rem 2rem 1rem; 
         background-color: #fff;
     }
 
@@ -567,14 +582,16 @@ footer > ul > li > a:visited{
         font-size: 2rem;
         text-align: center;
         color: #484848;
-        margin: 0 0 1rem 0; /* 16px gap below heading */
+        margin: 0 0 1rem 0; 
     }
 
     section.learning > .learning-grid {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem; /* 8px gap between cards */
+        gap: 0.5rem; 
     }
+
+    /* Remove elements from the learning section on mobile */
 
     section.learning > .learning-grid > .learning-card > img,
     section.learning > .learning-grid > .learning-card > .learning-card-body > p {
@@ -582,9 +599,8 @@ footer > ul > li > a:visited{
     }
 
     section.learning > .learning-grid > .learning-card {
-        width: 100%;
         background-color: #d8d8d8;
-        padding: 1rem 1.25rem 1.5rem 1.25rem; /* 16px top, 20px horizontal inset, 24px bottom */
+        padding: 1rem 1rem 1.5rem 1rem;
         margin: 0;
     }
 
@@ -600,12 +616,16 @@ footer > ul > li > a:visited{
         color: #484848;
     }
 
+    /** Set up the learning section for mobile */
+
     section.thesis {
         display: block;
         grid-template-columns: 1fr;
-        padding: 2rem 0 1.5rem 0; /* 32px top, 0 sides, 24px bottom */
+        padding: 2rem 0 1.5rem 0; 
         color: #484848;
     }
+
+    /* Remove the elements from thesis section for mobile */
 
     section.thesis .thesis-list,
     section.thesis .thesis-text,
@@ -613,7 +633,6 @@ footer > ul > li > a:visited{
         display: none;
     }
 
-    /* Reset any intermediate wrapper (e.g., .thesis-content / .thesis-grid) */
     section.thesis > div,
     section.thesis .thesis-main,
     section.thesis .thesis-video {
@@ -627,11 +646,10 @@ footer > ul > li > a:visited{
         margin: 0;
     }
 
-    /* Keep heading and full-width video visible */
     section.thesis > h2 {
         display: block;
         text-align: center;
-        margin: 0 0 1rem 0; /* 16px gap below heading */
+        margin: 0 0 1rem 0; 
     }
 
     section.thesis video {
@@ -643,18 +661,18 @@ footer > ul > li > a:visited{
         margin: 0;
     }
        
-    /* Set footer for mobile */
+    /** Set footer for mobile **/
+
+    /* Remove the links from the footer section for mobile */
 
     footer > ul{
         display: none;
     }
 
-
     footer > p{
-
-    white-space: nowrap;
-    font-size: x-small;
+        white-space: nowrap;
+        font-size: x-small;
     }
 }
 
-/* End of Mobile Section */
+/*** End of Mobile Section ***/
