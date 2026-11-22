@@ -558,7 +558,7 @@ footer > ul > li > a:visited{
 
     section.events .events-block:last-child{
         padding-bottom: 2rem;
-        background-color: whitesmoke;
+        background-color: white;
     }
 
     section.events > .events-block > .events-text{
